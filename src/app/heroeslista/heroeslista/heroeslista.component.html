@@ -1,0 +1,29 @@
+<div class="container">
+    <app-headerlista titulo="Consultar Heroes"></app-headerlista>
+    <button type="submit" class="btn btn-block btn-dark mb-2" [routerLink]="['/heroelista','nuevo']">Agregar heroe</button>
+    <div class="row " *ngFor="let item of heroes">
+        <div class="col-7">
+            <div class="card mb-3" style="max-width: 840px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img [src]="item.img" class="card-img">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.nombre}}</h5>
+                            <p class="card-text"><small class="text-muted">{{item.aparicion}} - {{item.casa}}</small></p>
+                            <p class="card-text">{{item.bio}}</p>
+                            <button type="submit" class="btn btn-primary mt-2" [routerLink]="['/heroelista',item.id_heroe]">Editar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

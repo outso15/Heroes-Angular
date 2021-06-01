@@ -1,0 +1,36 @@
+<div class="container">
+    <app-headerlista titulo="Nuevo Heroe" *ngIf="id=='nuevo'"></app-headerlista>
+    <app-headerlista titulo="Editar Heroe" *ngIf="id!='nuevo'"></app-headerlista>
+
+    <form #heroe_form="ngForm" (ngSubmit)="guardar(heroe_form)">
+        <div class="card mb-3" style="max-width: 840px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img [src]="heroe.img" class="card-img">
+                    <input class="form-control" type="text" [(ngModel)]="heroe.img" name="img" required>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <input class="form-control mt-2" type="text" size="30" [(ngModel)]="heroe.nombre" name="nombre" required>
+                        <input class="form-control mt-2" type="date" [(ngModel)]="heroe.aparicion" name="aparicion">
+                        <select class="form-control mt-2" [(ngModel)]="heroe.casa" name="casa" required>
+                            <option value="DC">
+                                DC
+                            </option>
+                            <option value="Marvel">
+                                Marvel
+                            </option>
+                        </select>
+                        <textarea class="form-control mt-2" [(ngModel)]="heroe.bio" name="bio" required></textarea>
+                        <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+
+</div>
